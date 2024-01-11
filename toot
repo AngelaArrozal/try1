@@ -1,0 +1,65 @@
+#include <iostream>
+using namespace std;
+
+
+int main() {
+
+	int stored = 1000;
+	int value;
+	int addition;
+	int subtraction;
+	int options;
+	char cont;
+	bool wantToCont = true;
+
+	while (wantToCont) {
+		cout
+			<< "Select an opertion to use\n"
+			<< "1. Addition\n"
+			<< "2. Subtraction\n"
+			<< "3. Exit\n"
+			<< "Enter your choice: ";
+		cin >> options;
+
+		if (options == 1 || options == 2) {
+			cout << "Please input value: ";
+			cin >> value;
+
+			switch (options) {
+
+			case 1:
+				stored += value;
+				break;
+
+			case 2:
+				stored += value;
+				break;
+
+			default:
+				cout << "Invalid choice\n";
+			}
+
+			cout << "stored value after computation: " << stored << endl;
+
+			cout << "\nDo you want to continue? y/n: ";
+			cin >> cont;
+			if (cont != 'y') {
+				wantToCont = false;
+				system("cls");
+				cout << "stored value after addition: " << stored << endl;
+				cout << "xiao.";
+				exit(0);
+			}
+		}
+		else if (options == 3) { // exit statement
+			system("cls");
+			wantToCont = false;
+			cout << "stored value after addition: " << stored << endl;
+			cout << "xiao.";
+			exit(0);
+		}
+		else {
+			cout << "\n invalid input.";
+		}
+	}
+}
